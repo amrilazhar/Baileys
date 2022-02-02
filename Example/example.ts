@@ -17,7 +17,7 @@ const { state, saveState } = useSingleFileAuthState('./auth_info_multi.json')
 const startSock = () => {
     
     const sock = makeWASocket({
-        logger: P({ level: 'trace' }),
+        // logger: P({ level: 'trace' }),
         printQRInTerminal: true,
         auth: state,
         // implement to handle retries
@@ -43,18 +43,18 @@ const startSock = () => {
     }
     
     sock.ev.on('chats.set', item => console.log(`recv ${item.chats.length} chats (is latest: ${item.isLatest})`))
-    sock.ev.on('messages.set', item => console.log(`recv ${item.messages.length} messages (is latest: ${item.isLatest})`))
-    sock.ev.on('contacts.set', item => console.log(`recv ${item.contacts.length} contacts`))
+    sock.ev.on('messages.set', item => console.log(`recv ${item.messages.length} messages (is latest: ${item.isLatest})`, item.messages[0]))
+    sock.ev.on('contacts.set', item => console.log(`recv ${item.contacts.length} contacts`, item.contacts))
 
     sock.ev.on('messages.upsert', async m => {
         console.log(JSON.stringify(m, undefined, 2))
         
-        const msg = m.messages[0]
-        if(!msg.key.fromMe && m.type === 'notify') {
-            console.log('replying to', m.messages[0].key.remoteJid)
-            await sock!.sendReadReceipt(msg.key.remoteJid, msg.key.participant, [msg.key.id])
-            await sendMessageWTyping({ text: 'Hello there!' }, msg.key.remoteJid)
-        }
+        // const msg = m.messages[0]
+        // if(!msg.key.fromMe && m.type === 'notify') {
+        //     console.log('replying to', m.messages[0].key.remoteJid)
+        //     await sock!.sendReadReceipt(msg.key.remoteJid, msg.key.participant, [msg.key.id])
+        //     await sendMessageWTyping({ text: 'Hello there!' }, msg.key.remoteJid)
+        // }
         
     })
 
