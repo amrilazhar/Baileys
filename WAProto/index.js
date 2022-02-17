@@ -10116,7 +10116,7 @@ $root.proto = (function () {
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
 				object.mediaKey = message.mediaKey;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -15421,7 +15421,7 @@ $root.proto = (function () {
 				}
 			}
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -15448,7 +15448,7 @@ $root.proto = (function () {
 							  ).toNumber(true)
 							: message.fileSizeBytes;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -15458,7 +15458,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.fileSha256)
 							: message.fileSha256;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -24618,7 +24618,7 @@ $root.proto = (function () {
 			if (message.caption != null && message.hasOwnProperty("caption"))
 				object.caption = message.caption;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -24644,7 +24644,7 @@ $root.proto = (function () {
 			if (message.height != null && message.hasOwnProperty("height")) object.height = message.height;
 			if (message.width != null && message.hasOwnProperty("width")) object.width = message.width;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -24654,7 +24654,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.mediaKey)
 							: message.mediaKey;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -24675,7 +24675,7 @@ $root.proto = (function () {
 			if (message.directPath != null && message.hasOwnProperty("directPath"))
 				object.directPath = message.directPath;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -26790,7 +26790,7 @@ $root.proto = (function () {
 						? Array.prototype.slice.call(message.thumbnailEncSha256)
 						: message.thumbnailEncSha256;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -26800,7 +26800,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.mediaKey)
 							: message.mediaKey;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -27562,7 +27562,7 @@ $root.proto = (function () {
 				object.mimetype = message.mimetype;
 			if (message.title != null && message.hasOwnProperty("title")) object.title = message.title;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -27588,7 +27588,7 @@ $root.proto = (function () {
 			if (message.pageCount != null && message.hasOwnProperty("pageCount"))
 				object.pageCount = message.pageCount;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -27600,7 +27600,7 @@ $root.proto = (function () {
 			if (message.fileName != null && message.hasOwnProperty("fileName"))
 				object.fileName = message.fileName;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -27613,7 +27613,7 @@ $root.proto = (function () {
 			if (message.directPath != null && message.hasOwnProperty("directPath"))
 				object.directPath = message.directPath;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -28210,7 +28210,7 @@ $root.proto = (function () {
 			if (message.mimetype != null && message.hasOwnProperty("mimetype"))
 				object.mimetype = message.mimetype;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -28237,7 +28237,7 @@ $root.proto = (function () {
 				object.seconds = message.seconds;
 			if (message.ptt != null && message.hasOwnProperty("ptt")) object.ptt = message.ptt;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -28247,7 +28247,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.mediaKey)
 							: message.mediaKey;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -28260,7 +28260,7 @@ $root.proto = (function () {
 			if (message.directPath != null && message.hasOwnProperty("directPath"))
 				object.directPath = message.directPath;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -29109,7 +29109,7 @@ $root.proto = (function () {
 			if (message.mimetype != null && message.hasOwnProperty("mimetype"))
 				object.mimetype = message.mimetype;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -29135,7 +29135,7 @@ $root.proto = (function () {
 			if (message.seconds != null && message.hasOwnProperty("seconds"))
 				object.seconds = message.seconds;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -29151,7 +29151,7 @@ $root.proto = (function () {
 			if (message.height != null && message.hasOwnProperty("height")) object.height = message.height;
 			if (message.width != null && message.hasOwnProperty("width")) object.width = message.width;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -29172,7 +29172,7 @@ $root.proto = (function () {
 			if (message.directPath != null && message.hasOwnProperty("directPath"))
 				object.directPath = message.directPath;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -30791,7 +30791,7 @@ $root.proto = (function () {
 				object.originalMessageId = "";
 			}
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -30815,7 +30815,7 @@ $root.proto = (function () {
 							  )
 							: message.fileLength;
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -30825,7 +30825,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.mediaKey)
 							: message.mediaKey;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -36978,7 +36978,7 @@ $root.proto = (function () {
 			}
 			if (message.url != null && message.hasOwnProperty("url")) object.url = message.url;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -36988,7 +36988,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.fileSha256)
 							: message.fileSha256;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
@@ -36999,7 +36999,7 @@ $root.proto = (function () {
 							: message.fileEncSha256;
 				}
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -37029,7 +37029,7 @@ $root.proto = (function () {
 							  )
 							: message.fileLength;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -49543,7 +49543,7 @@ $root.proto = (function () {
 				object.directPath = "";
 			}
 			if (message.mediaKey != null && message.hasOwnProperty("mediaKey"))
-				if (message.reply) {
+				if (message.reply && typeof message.mediaKey == "string") {
 					object.mediaKey = message.mediaKey;
 				} else
 					object.mediaKey =
@@ -49553,7 +49553,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.mediaKey)
 							: message.mediaKey;
 			if (message.mediaKeyTimestamp != null && message.hasOwnProperty("mediaKeyTimestamp"))
-				if (message.reply) {
+				if (message.reply && (typeof message.mediaKeyTimestamp === "number" || typeof message.mediaKeyTimestamp === "string")) {
 					object.mediaKeyTimestamp = String(message.mediaKeyTimestamp);
 				} else if (typeof message.mediaKeyTimestamp === "number")
 					object.mediaKeyTimestamp =
@@ -49569,7 +49569,7 @@ $root.proto = (function () {
 							  ).toNumber()
 							: message.mediaKeyTimestamp;
 			if (message.fileSha256 != null && message.hasOwnProperty("fileSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileSha256 == "string") {
 					object.fileSha256 = message.fileSha256;
 				} else
 					object.fileSha256 =
@@ -49579,7 +49579,7 @@ $root.proto = (function () {
 							? Array.prototype.slice.call(message.fileSha256)
 							: message.fileSha256;
 			if (message.fileEncSha256 != null && message.hasOwnProperty("fileEncSha256"))
-				if (message.reply) {
+				if (message.reply && typeof message.fileEncSha256 == "string") {
 					object.fileEncSha256 = message.fileEncSha256;
 				} else {
 					object.fileEncSha256 =
